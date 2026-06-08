@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#f6f3eb"/>
+  <!-- Four-leaf clover -->
+  <g transform="translate(32 32)" fill="#5a7c4f">
+    <path d="M 0 -4 C -10 -14, -14 -10, -4 0 Z"/>
+    <path d="M 4 0 C 14 -10, 10 -14, 0 -4 Z"/>
+    <path d="M 0 4 C 10 14, 14 10, 4 0 Z"/>
+    <path d="M -4 0 C -14 10, -10 14, 0 4 Z"/>
+    <circle cx="0" cy="0" r="2" fill="#3a5a30"/>
+  </g>
+</svg>

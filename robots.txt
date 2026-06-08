@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glig-cafe.vercel.app/sitemap.xml
