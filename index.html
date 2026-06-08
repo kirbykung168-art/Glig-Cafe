@@ -20,7 +20,7 @@ Brand brief — verified before code:
   Acronym     "Good Luck I Guess"
   Logo mark   four-leaf clover (Japanese good-luck symbol)
   Address     219 Sukhumvit 49/13, Khlong Tan Nuea, Watthana, BKK 10110
-  Hours       Daily 08:00 – 20:00 (Daniel Food Diary 2022; mindtrip 2025)
+  Hours       Daily 08:00 – 18:00 (verified @gliggligglig bio Jun 2026; previously 08–20 per Daniel Food Diary 2022)
   Concept     Japanese-inspired glasshouse bakery cafe, lush garden, photo-worthy
 
 Menu items + prices (THB) — verified:
@@ -78,7 +78,7 @@ Every <img> below carries a source comment.
   "address":{"@type":"PostalAddress","streetAddress":"219 Sukhumvit 49/13","addressLocality":"Khlong Tan Nuea, Watthana","addressRegion":"Bangkok","postalCode":"10110","addressCountry":"TH"},
   "geo":{"@type":"GeoCoordinates","latitude":13.733600,"longitude":100.572100},
   "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"18:00"}
   ],
   "sameAs":["https://www.instagram.com/gliggligglig/","https://www.facebook.com/gliggligglig/"]
 }
@@ -257,14 +257,75 @@ button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
 .manifesto-body .pull{font-family:var(--italic);font-style:italic;font-weight:300;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.28;color:var(--ink);padding:1rem 0 1rem 1.5rem;border-left:1px solid var(--clover);margin:1.8rem 0}
 .manifesto-body .pull cite{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood);margin-top:.7rem}
 
-/* WORDMARK photo bleed */
+/* WORDMARK · clover-as-punctuation (replaces photo-bleed) */
 .wordmark{padding:clamp(60px,8vw,120px) 0;text-align:center;background:var(--linen);position:relative;overflow:hidden}
 .wordmark .label{margin-bottom:1.4rem;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--clover)}
-.wordmark-en{font-family:var(--display);font-weight:300;font-size:clamp(4rem,18vw,18rem);line-height:.9;letter-spacing:-.05em;color:var(--clover);margin:0;user-select:none}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .wordmark-en{background-image:url('/images/optimized/garden-view-1600.webp');background-size:cover;background-position:center 35%;-webkit-background-clip:text;background-clip:text;color:transparent}
-}
+.wordmark-en{font-family:var(--display);font-weight:200;font-size:clamp(3.8rem,14vw,14rem);line-height:.9;letter-spacing:-.04em;color:var(--ink);margin:0;user-select:none;display:inline-flex;align-items:center;justify-content:center;gap:clamp(.4rem,1.4vw,1.6rem);flex-wrap:nowrap}
+.wordmark-en .letter{display:inline-block}
+.wordmark-en .clover-sep{display:inline-block;width:clamp(28px,4vw,72px);height:clamp(28px,4vw,72px);vertical-align:middle;animation:cloverDrift 14s ease-in-out infinite}
+.wordmark-en .clover-sep:nth-of-type(2){animation-delay:-2.6s}
+.wordmark-en .clover-sep:nth-of-type(3){animation-delay:-5.4s}
+@keyframes cloverDrift{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(10deg) translateY(-6px)}}
 .wordmark-sub{font-family:var(--italic);font-style:italic;font-weight:300;color:var(--wood);font-size:clamp(1.05rem,1.4vw,1.3rem);margin-top:1.2rem}
+
+/* OMIKUJI · "Pull a Clover" signature moment */
+.omikuji{padding:clamp(80px,10vw,140px) 0;background:linear-gradient(180deg,var(--linen) 0%,var(--paper) 100%);position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
+.omikuji::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, rgba(138,165,124,.18), transparent 45%),radial-gradient(circle at 80% 80%, rgba(200,168,87,.14), transparent 45%);pointer-events:none}
+.omikuji-inner{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+.omikuji-label{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--clover);margin-bottom:1rem}
+.omikuji h2{font-family:var(--display);font-weight:200;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.04;letter-spacing:-.025em;margin-bottom:.6rem}
+.omikuji h2 em{font-family:var(--italic);font-style:italic;color:var(--clover);font-weight:300}
+.omikuji-blurb{font-family:var(--italic);font-style:italic;color:var(--wood);font-size:1.1rem;line-height:1.5;margin-bottom:2.4rem;max-width:46ch;margin-left:auto;margin-right:auto}
+.omikuji-stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.8rem;min-height:340px}
+.omikuji-clover{background:none;border:0;padding:0;cursor:pointer;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.omikuji-clover svg{width:clamp(120px,18vw,200px);height:clamp(120px,18vw,200px);filter:drop-shadow(0 6px 14px rgba(58,90,48,.22));transition:transform .35s var(--easing)}
+.omikuji-clover:hover svg{transform:scale(1.04) rotate(6deg)}
+.omikuji-clover:focus-visible{outline:none}
+.omikuji-clover:focus-visible svg{outline:2px solid var(--clover);outline-offset:6px;border-radius:50%}
+.omikuji-clover .petal{transform-origin:center center;transition:transform .9s var(--easing), opacity .9s var(--easing)}
+.omikuji-clover.tumbling .petal-1{animation:tumble1 1.05s cubic-bezier(.55,0,.3,1) forwards}
+.omikuji-clover.tumbling .petal-2{animation:tumble2 1.05s cubic-bezier(.55,0,.3,1) forwards}
+.omikuji-clover.tumbling .petal-3{animation:tumble3 1.05s cubic-bezier(.55,0,.3,1) forwards}
+.omikuji-clover.tumbling .petal-4{animation:tumble4 1.05s cubic-bezier(.55,0,.3,1) forwards}
+.omikuji-clover.tumbling .petal-core{animation:coreFade .7s ease forwards}
+@keyframes tumble1{60%{transform:translate(-28px,-30px) rotate(-160deg);opacity:1}100%{transform:translate(-60px,-80px) rotate(-360deg);opacity:0}}
+@keyframes tumble2{60%{transform:translate(28px,-30px) rotate(180deg);opacity:1}100%{transform:translate(70px,-70px) rotate(360deg);opacity:0}}
+@keyframes tumble3{60%{transform:translate(30px,28px) rotate(160deg);opacity:1}100%{transform:translate(60px,90px) rotate(360deg);opacity:0}}
+@keyframes tumble4{60%{transform:translate(-28px,28px) rotate(-180deg);opacity:1}100%{transform:translate(-70px,80px) rotate(-360deg);opacity:0}}
+@keyframes coreFade{100%{opacity:0;transform:scale(.3)}}
+.omikuji-clover.reset .petal,.omikuji-clover.reset .petal-core{animation:none;transform:none;opacity:1}
+.omikuji-instr{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--wood);opacity:.8}
+.omikuji-instr::before{content:"▸ "}
+.omikuji-slip{
+  background:linear-gradient(180deg, #fdfaf0 0%, #f1ebd6 100%);
+  border:1px solid rgba(58,90,48,.18);
+  box-shadow:0 22px 44px -22px rgba(44,48,36,.32), inset 0 0 0 1px rgba(255,255,255,.5);
+  padding:1.8rem 1.6rem 1.4rem;
+  max-width:460px; width:100%;
+  position:relative;
+  opacity:0; transform:translateY(28px) scale(.95);
+  transition:opacity .55s var(--easing), transform .55s var(--easing);
+  border-radius:2px;
+}
+.omikuji-slip.show{opacity:1;transform:translateY(0) scale(1)}
+.omikuji-slip::before, .omikuji-slip::after{content:"";position:absolute;top:50%;width:8px;height:8px;border-radius:50%;background:#c8a857;transform:translateY(-50%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.omikuji-slip::before{left:-4px}
+.omikuji-slip::after{right:-4px}
+.omikuji-slip .stamp{font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--clover);margin-bottom:.7rem}
+.omikuji-slip .stamp::before{content:"☘  "}
+.omikuji-slip blockquote{font-family:var(--italic);font-style:italic;font-weight:300;font-size:clamp(1.4rem,2.4vw,1.85rem);line-height:1.28;color:var(--ink);margin-bottom:.9rem}
+.omikuji-slip .again{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clover);background:none;border:0;cursor:pointer;padding:.3rem 0;border-bottom:1px solid var(--clover)}
+.omikuji-slip .again:hover{color:var(--moss);border-color:var(--moss)}
+.omikuji-slip .again::before{content:"↻ "}
+@media (prefers-reduced-motion: reduce){
+  .omikuji-clover.tumbling .petal,.omikuji-clover.tumbling .petal-core{animation:none;opacity:0;transition:opacity .25s linear}
+  .omikuji-slip{transition:opacity .25s linear;transform:none}
+  .wordmark-en .clover-sep{animation:none}
+}
+@media (max-width:600px){
+  .omikuji-clover svg{width:140px;height:140px}
+  .omikuji-slip blockquote{font-size:1.2rem}
+}
 
 /* MENU bento */
 .menu{padding:clamp(80px,12vw,160px) 0;background:var(--paper);border-bottom:1px solid var(--rule)}
@@ -468,7 +529,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
       <div class="ticker-track">
         <span class="leaf">good luck I guess</span>
         <span class="sand">●</span>
-        <span>Daily 08:00 – 20:00</span>
+        <span>Daily 08:00 – 18:00</span>
         <span class="sand">●</span>
         <span class="leaf">219 Sukhumvit 49/13</span>
         <span class="sand">●</span>
@@ -478,7 +539,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
         <span class="sand">●</span>
         <span>good luck I guess</span>
         <span class="sand">●</span>
-        <span>Daily 08:00 – 20:00</span>
+        <span>Daily 08:00 – 18:00</span>
         <span class="sand">●</span>
         <span class="leaf">219 Sukhumvit 49/13</span>
         <span class="sand">●</span>
@@ -508,6 +569,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
     </a>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#luck">Luck</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#press">Press</a></li>
@@ -526,6 +588,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   </button>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#luck">Luck</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#press">Press</a></li>
@@ -550,7 +613,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
           <dt>Today</dt><dd id="todayLine">— · checking the clock</dd>
           <dt>Find</dt><dd>219 Sukhumvit 49/13 · Watthana</dd>
           <dt>Reach</dt><dd>@gliggligglig</dd>
-          <dt>Open</dt><dd>Daily 08:00 – 20:00</dd>
+          <dt>Open</dt><dd>Daily 08:00 – 18:00</dd>
         </dl>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#visit">Get directions <span class="ar">→</span></a>
@@ -583,8 +646,8 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
 <!-- PROOF -->
 <section class="proof" aria-label="proof">
   <div class="wrap proof-grid">
-    <div class="proof-cell"><div class="n">5,300<em>+</em></div><div class="l">@gliggligglig · Instagram followers</div></div>
-    <div class="proof-cell"><div class="n">8 – 20</div><div class="l">Daily hours · Mon–Sun</div></div>
+    <div class="proof-cell"><div class="quote">"House blend, baked goods, <em style="color:var(--leaf);font-style:italic;font-family:var(--italic)">after-dark drinks.</em>"<cite>— @gliggligglig · bio</cite></div></div>
+    <div class="proof-cell"><div class="n">8 – 18</div><div class="l">Daily hours · Mon–Sun · มีที่จอดรถ</div></div>
     <div class="proof-cell"><div class="n">฿95</div><div class="l">Choux Cream Puffs · the signature</div></div>
     <div class="proof-cell"><div class="quote">"A Japanese glasshouse bakery with a photo-worthy garden."<cite>— Daniel Food Diary, Dec 2022</cite></div></div>
   </div>
@@ -634,11 +697,47 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   </div>
 </section>
 
-<!-- WORDMARK -->
+<!-- WORDMARK · letters separated by live clovers -->
 <section class="wordmark" aria-hidden="true">
   <span class="label">№ 03 · the wordmark</span>
-  <h2 class="wordmark-en">GLIG</h2>
+  <h2 class="wordmark-en">
+    <span class="letter">G</span>
+    <svg class="clover-sep" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(32 32)" fill="#5a7c4f"><path d="M 0 -6 C -16 -22, -22 -16, -6 0 Z"/><path d="M 6 0 C 22 -16, 16 -22, 0 -6 Z"/><path d="M 0 6 C 16 22, 22 16, 6 0 Z"/><path d="M -6 0 C -22 16, -16 22, 0 6 Z"/><circle cx="0" cy="0" r="3" fill="#3a5a30"/></g></svg>
+    <span class="letter">L</span>
+    <svg class="clover-sep" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(32 32)" fill="#8aa57c"><path d="M 0 -6 C -16 -22, -22 -16, -6 0 Z"/><path d="M 6 0 C 22 -16, 16 -22, 0 -6 Z"/><path d="M 0 6 C 16 22, 22 16, 6 0 Z"/><path d="M -6 0 C -22 16, -16 22, 0 6 Z"/><circle cx="0" cy="0" r="3" fill="#5a7c4f"/></g></svg>
+    <span class="letter">I</span>
+    <svg class="clover-sep" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(32 32)" fill="#5a7c4f"><path d="M 0 -6 C -16 -22, -22 -16, -6 0 Z"/><path d="M 6 0 C 22 -16, 16 -22, 0 -6 Z"/><path d="M 0 6 C 16 22, 22 16, 6 0 Z"/><path d="M -6 0 C -22 16, -16 22, 0 6 Z"/><circle cx="0" cy="0" r="3" fill="#3a5a30"/></g></svg>
+    <span class="letter">G</span>
+  </h2>
   <p class="wordmark-sub">— good luck I guess. since the glasshouse.</p>
+</section>
+
+<!-- OMIKUJI · pull a clover · signature moment -->
+<section class="omikuji" id="luck" aria-label="Pull a clover">
+  <div class="omikuji-inner reveal">
+    <span class="omikuji-label">№ 04 · the lucky draw</span>
+    <h2>Pull a <em>clover.</em></h2>
+    <p class="omikuji-blurb">An omikuji-style fortune slip drawn from the cabinet, the bio, the garden and the menu. Click the clover.</p>
+    <div class="omikuji-stage">
+      <button class="omikuji-clover" id="omikujiClover" type="button" aria-label="Pull a clover and reveal a fortune slip">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <g transform="translate(100 100)">
+            <path class="petal petal-1" d="M 0 -16 C -52 -68, -72 -52, -16 0 Z" fill="#5a7c4f"/>
+            <path class="petal petal-2" d="M 16 0 C 68 -52, 52 -72, 0 -16 Z" fill="#6d8c5f"/>
+            <path class="petal petal-3" d="M 0 16 C 52 68, 72 52, 16 0 Z" fill="#5a7c4f"/>
+            <path class="petal petal-4" d="M -16 0 C -68 52, -52 72, 0 16 Z" fill="#8aa57c"/>
+            <circle class="petal-core" cx="0" cy="0" r="7" fill="#3a5a30"/>
+          </g>
+        </svg>
+      </button>
+      <p class="omikuji-instr" id="omikujiInstr">tap to draw</p>
+      <div class="omikuji-slip" id="omikujiSlip" role="status" aria-live="polite">
+        <div class="stamp">Today's slip · GLIG</div>
+        <blockquote id="omikujiText">—</blockquote>
+        <button class="again" id="omikujiAgain" type="button">draw again</button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- MENU -->
@@ -646,10 +745,10 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   <div class="wrap">
     <div class="menu-head">
       <div class="reveal">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 04 · The Cabinet</span>
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 05 · The Cabinet</span>
         <h2 style="margin-top:1.1rem;">A short, <em>handpicked</em> bakery cabinet.</h2>
       </div>
-      <p class="intro reveal d2">Daily fresh bakes, signature milk slushies, matcha yuzu sparklers, classic espresso. Prices verified at the Daniel Food Diary visit, Dec 2022.</p>
+      <p class="intro reveal d2">House blend, baked goods and — per the bio — <em class="italic" style="color:var(--clover)">after-dark drinks.</em> Daily fresh bakes, signature milk slushies, matcha yuzu sparklers, classic espresso. Prices verified at the Daniel Food Diary visit, Dec 2022; menu cross-checked against IG, Jun 2026.</p>
     </div>
 
     <div class="bento">
@@ -738,10 +837,17 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
       </button>
 
       <article class="tile dark t-11 reveal d2">
-        <div class="lbl">▸ DRINKS</div>
+        <div class="lbl">▸ AFTER-DARK</div>
         <div class="name">Pink Yuzu Sparkling Espresso · Pure Matcha Yuzu Sparkling</div>
-        <div class="desc">Espresso or matcha layered with sparkling yuzu — bright, citric, photogenic.</div>
+        <div class="desc">Espresso or matcha layered with sparkling yuzu — bright, citric, photogenic. Per the bio, the <em class="italic" style="color:var(--leaf)">after-dark</em> end of the cabinet.</div>
         <div class="price">฿180</div>
+      </article>
+
+      <article class="tile linen t-3 reveal d3" style="grid-column:span 2">
+        <div class="lbl">▸ NEW · 2026</div>
+        <div class="name">Mango Éclair</div>
+        <div class="desc">A summer fixture seen on the grid — soft choux, ripe mango, light cream.</div>
+        <div class="price">ask the cabinet</div>
       </article>
 
     </div>
@@ -753,7 +859,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   <div class="wrap">
     <div class="gallery-head reveal">
       <div>
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 05 · The Garden</span>
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 06 · The Garden</span>
         <h2 style="margin-top:1rem;">A room <em>worth photographing.</em></h2>
       </div>
       <p>Photographed for heartpatrick.com / Spaces · Jan 2023. Click any to enlarge.</p>
@@ -830,7 +936,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   <div class="wrap">
     <div class="press-head">
       <div class="reveal">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 06 · Said in the press</span>
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--wood)">№ 07 · Said in the press</span>
         <h2 style="margin-top:1rem;">A <em>quiet</em> chorus from the cafe press.</h2>
       </div>
       <p class="intro reveal d2">From Daniel Food Diary's first coverage to heartpatrick's editorial spaces portfolio — a small consistent set of writers who recognised the glasshouse for what it is.</p>
@@ -870,7 +976,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   <div class="wrap visit-inner">
     <div class="visit-grid">
       <div class="reveal">
-        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--leaf);opacity:.85">№ 07 · Visit</span>
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--leaf);opacity:.85">№ 08 · Visit</span>
         <h2 style="margin-top:1rem;">A glasshouse <em>off Sukhumvit 49.</em></h2>
         <p class="lede">Tucked into a small soi (49/13) in the quiet landed-residential pocket past Phrom Phong / Thong Lor. The clover sign is small. Don't blink.</p>
         <div class="visit-ctas">
@@ -891,13 +997,13 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
         <div class="block" style="grid-column:1/-1">
           <div class="label">Daily hours</div>
           <table class="hours-table" id="hoursTable">
-            <tr><td>Monday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Tuesday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Wednesday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Thursday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Friday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Saturday</td><td>8:00 — 20:00</td></tr>
-            <tr><td>Sunday</td><td>8:00 — 20:00</td></tr>
+            <tr><td>Monday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Tuesday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Wednesday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Thursday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Friday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Saturday</td><td>8:00 — 18:00</td></tr>
+            <tr><td>Sunday</td><td>8:00 — 18:00</td></tr>
           </table>
         </div>
         <div class="block">
@@ -907,6 +1013,14 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
         <div class="block">
           <div class="label">Facebook</div>
           <div class="value"><a href="https://www.facebook.com/gliggligglig/" target="_blank" rel="noopener">/gliggligglig</a></div>
+        </div>
+        <div class="block">
+          <div class="label">All links</div>
+          <div class="value"><a href="https://linktr.ee/glig.cafe" target="_blank" rel="noopener">linktr.ee/glig.cafe</a></div>
+        </div>
+        <div class="block">
+          <div class="label">Parking</div>
+          <div class="value"><em>มีที่จอดรถ</em> · yes, on-site</div>
         </div>
       </div>
     </div>
@@ -926,7 +1040,8 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
     </div>
     <div class="credit">
       Tribute site · brand, photographs &amp; menu belong to GLIG CAFE.<br>
-      Type "<span style="color:var(--leaf)">glig</span>" for a small piece of luck. Built with care · 2026.
+      Type "<span style="color:var(--leaf)">glig</span>" anywhere for a small piece of luck · <a href="#luck" style="color:var(--leaf)">pull a clover</a> for a fortune slip.<br>
+      <span style="color:var(--leaf)">#thatsagoodluckiguess</span> · Built with care · 2026.
     </div>
   </div>
 </footer>
@@ -979,6 +1094,53 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
   lb.addEventListener('click',closeLb);
   $('#lbClose').addEventListener('click',e=>{e.stopPropagation();closeLb();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+  // === OMIKUJI · Pull a Clover · signature moment ===
+  const omiClover=$('#omikujiClover'); const omiSlip=$('#omikujiSlip'); const omiText=$('#omikujiText'); const omiAgain=$('#omikujiAgain'); const omiInstr=$('#omikujiInstr');
+  const fortunes=[
+    "A Honey Yuzu choux puff is in your future.",
+    "Take the window seat — the garden is showing off today.",
+    "Order the milk slushie. Pour the matcha on top.",
+    "After dark, sit at the bar.",
+    "Today belongs to whoever shows up at 08:00.",
+    "Good luck — I guess.",
+    "Three glig's are better than one.",
+    "The four-leaf clover on the door is for you.",
+    "Honey Yuzu before noon. Hazelnut after.",
+    "The garden is at its best on a sunny late morning.",
+    "Pull a slip, take a seat, ask for the cabinet.",
+    "Pain au chocolat counts as breakfast in Watthana.",
+    "Caramel Macchiato → patio → photograph.",
+    "Open every day. มีที่จอดรถ.",
+    "Matcha Yuzu Sparkling will fix the afternoon.",
+    "The brioche bun is back on the shelf.",
+    "A blueberry danish is a small kindness.",
+    "That's a good luck I guess."
+  ];
+  let lastIdx=-1;
+  function pickFortune(){let i; do{i=Math.floor(Math.random()*fortunes.length);}while(i===lastIdx && fortunes.length>1); lastIdx=i; return fortunes[i];}
+  function drawSlip(){
+    if(!omiClover) return;
+    omiClover.classList.remove('reset');
+    omiClover.classList.add('tumbling');
+    if(omiInstr) omiInstr.style.opacity='0';
+    setTimeout(()=>{
+      omiText.textContent='“'+pickFortune()+'”';
+      omiSlip.classList.add('show');
+    }, 700);
+    setTimeout(()=>{
+      omiClover.classList.remove('tumbling');
+      omiClover.classList.add('reset');
+      if(omiInstr) omiInstr.style.opacity='';
+    }, 1200);
+  }
+  if(omiClover){
+    omiClover.addEventListener('click', drawSlip);
+    omiClover.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();drawSlip();}});
+  }
+  if(omiAgain){
+    omiAgain.addEventListener('click',e=>{e.stopPropagation(); omiSlip.classList.remove('show'); setTimeout(drawSlip, 320);});
+  }
 
   // Easter egg — type "glig" → clover scatter
   const luckyField=$('#luckyField');
