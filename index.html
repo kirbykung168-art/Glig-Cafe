@@ -455,12 +455,17 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
 .lightbox img{max-width:96vw;max-height:88vh;border-radius:4px}
 .lightbox .close{position:absolute;top:18px;right:18px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);padding:.6rem .9rem;border:1px solid var(--soft);border-radius:999px}
 
-/* reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--easing),transform .9s var(--easing)}
+/* reveal — defensive: visible by default; JS opts in via .js-reveal on <html> */
+.reveal{opacity:1;transform:none;transition:opacity .9s var(--easing),transform .9s var(--easing)}
+.js-reveal .reveal:not(.in){opacity:0;transform:translateY(28px)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d2{transition-delay:.1s}
 .reveal.d3{transition-delay:.2s}
 .reveal.d4{transition-delay:.3s}
+@media (prefers-reduced-motion: reduce){
+  .js-reveal .reveal:not(.in){opacity:1;transform:none}
+  .reveal{transition:none}
+}
 
 /* easter egg clover scatter */
 .lucky{position:fixed;inset:0;pointer-events:none;z-index:90}
@@ -945,7 +950,7 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
     <div class="press-grid">
       <div class="press-quotes">
         <div class="press-quote reveal">
-          <blockquote>"Drawing inspiration from Japanese elements, the name GLIG is derived from acronym 'Good Luck I Guess', which then translates into their logo represented by a four-leaf clover that symbolises good luck in Japanese beliefs."</blockquote>
+                    <blockquote>"Drawing inspiration from Japanese elements, the name GLIG is derived from acronym 'Good Luck I Guess', which then translates into their logo represented by a four-leaf clover that symbolises good luck in Japanese beliefs."</blockquote>
           <cite>— <a href="https://danielfooddiary.com/2022/12/12/gligcafe/" target="_blank" rel="noopener">Daniel Food Diary</a> · Dec 2022</cite>
         </div>
         <div class="press-quote reveal d2">
@@ -1058,6 +1063,8 @@ footer .credit{opacity:.55;max-width:48ch;line-height:1.7}
 (() => {
   const $$=(s,p=document)=>Array.from(p.querySelectorAll(s));
   const $=(s,p=document)=>p.querySelector(s);
+  // Opt into reveal animation only when JS runs (defensive: content visible without JS)
+  document.documentElement.classList.add('js-reveal');
   const heroPhoto=$('#heroPhoto');
   if(heroPhoto)requestAnimationFrame(()=>requestAnimationFrame(()=>heroPhoto.classList.add('loaded')));
   const nav=$('#nav');
